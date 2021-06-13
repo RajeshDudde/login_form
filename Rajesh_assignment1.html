@@ -1,0 +1,529 @@
+<html>
+    <head>
+        <meta name="description" content="student enrollment form">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <style>
+         .student-application
+         {
+             background-color: bisque;
+             color: black;
+             text-align: center;
+             padding: 4px;
+         }
+         /* .student-form
+         {
+            justify-content: center;
+            text-align: left;
+            padding:10px;
+            width:500px;
+           
+         } */
+         #name,#website,#imglink,#email
+        {
+            padding: 5px;
+            margin:4px;
+            position:relative;
+            border-radius:4%;
+           
+        }
+       #en1,#clr
+       {
+           padding:5px;
+           width:auto;
+           border-radius:4%;
+       }
+        #name-sp,#website-sp,#imglink-sp,#email-sp,#gender-sp
+        {
+            color:red;
+        }
+        .form     
+        { 
+          display: table;  
+          padding-top:8px;
+          width:48%;
+          overflow-x: scroll;
+
+        }
+        .para   { display: table-row; }
+        .l   { display: table-cell; width:23%; }
+        .i   { display: table-cell; width:100%; }
+        .s   { display: table-row; width:23%; } 
+        .btn1
+        {
+            display: table-cell; 
+           margin:5%;
+            padding:4%;
+            width:30%;
+        }
+        .btn2
+        {
+            display: table-cell; 
+            margin:5%;
+            width:50%;
+            padding:4%;
+        }
+        .student{
+             float:left;
+             width:50%;
+             height:auto;
+        }
+       .enrolled-students
+       {
+           float:right;
+           width:49%;
+           height:auto;
+           text-align: left;
+       }
+     
+        .desc
+        {
+            text-align: center;
+            background-color: seagreen;
+            color:black;
+            padding: 4px;
+        }
+        #name1
+        {
+             float: left;
+             text-align: center;
+        }
+        .card
+        {
+          
+            display:block;
+            position:relative;
+             width:auto;
+             height:30%;
+             border-collapse: collapse;
+             display: flex;
+            animation: fadeIn 1s ease-in;
+        }
+        .card:nth-child(even)
+        {
+            background-color: rgb(229, 250, 194);
+        }
+    
+     .description
+     {
+         float:left;
+         display:block;
+         width:49%;
+         align-items: center;
+         overflow-x: hidden;
+         padding:2px;
+         border-width: thick;
+         border:3px solid rgba(25, 187, 25, 0.856);
+         border-collapse: collapse;
+     }
+     .img
+     {
+         float:right;
+         display:block;
+         width:49%;
+         border-width: thick;
+         border:3px solid rgba(25, 187, 25, 0.856);
+         border-collapse: collapse;
+     }
+     #img1
+     {
+         width:100%;
+        height:100%;
+     }
+    
+     .head
+     {
+         padding:5px;
+         margin-top:5px;
+         display:block;
+         background-color: rgba(128, 255, 0, 0.493);
+         animation: fadeIn 1s ease-in;
+     }
+    
+     @keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    25%
+    {
+        opacity: 0.2;
+    }
+    50%
+    {
+        opacity: 0.4;
+    }
+    100%{
+        opacity: 1;
+    }
+    }
+    @media (max-width:320px)
+    {
+        .student
+        {
+           width:100%;
+           height:100%;
+        }
+         .form
+         {
+            display: table;
+            /* white-space: nowrap; */
+            width:51%;
+            height:auto;
+          
+            float:left;
+            overflow-x:scroll;
+         } 
+
+         .para{
+              display: table-row;  
+              white-space: nowrap;
+              width:10%;
+             }
+             /* .l,.i,.s
+             { 
+                 display: table-cell; 
+                 width:10%;
+                 size:4%;
+                 white-space: nowrap;
+             } */
+         .enrolled-students
+         {
+            width:49%;
+            height:auto;
+            float:right;
+         }
+         .i{
+            color: hotpink; 
+        }
+    }
+        </style>
+    </head>
+    <body>
+        <div class="student">
+        <div class="student-application"> 
+            Student Enrollment Form
+        </div>
+        <form class="form" id="a">
+        <p class="para">
+         <lable class="l">Name</lable>
+         <input class="i" type="text" id="name" > 
+         <span class="s"id="name-sp" ></span>
+        </p>
+         <p class="para">
+         <lable class="l">Email</lable>
+         <input class="i" type="text" id="email">
+         <span class="s" id="email-sp"></span>
+        </p>
+        <p class="para">
+         <lable class="l">Website</lable>
+         <input class="i" type="text" id="website">
+         <span class="s" id="website-sp"></span>
+        </p>
+        <p class="para">
+         <lable class="l">Image Link</lable>
+         <!-- <input type="file"
+          name="avatar" id="avatar"
+         accept="image/png, image/jpeg">
+         <p class="para"> -->
+            <input class="i" type="text" name="image" id="imglink">
+            <span class="s" id="imglink-sp"></span>
+        <!-- </p> -->
+        </p>
+    
+        <p class="para">
+        <lable class="l">Gender:</lable>
+        <input class="para" type="radio" name="gender" id="Male" value="Male">Male</input>
+        <p  class="para">
+        <lable class="l"></lable>
+        <input class="para" type="radio" id="Female" name="gender" value="Female">Female</input> 
+        </p>
+        <p  class="para">
+        <lable class="l"></lable>
+        <span class="s" id="gender-sp"></span>
+        </p>
+        </p>
+       
+       
+        <p class="para">
+        <lable  class="l">Skills:</lable>
+        <input  class="para"type="checkbox" id="Java" value="Java" name="skills">Java</input>
+        <input  class="para"type="checkbox" id="HTML"  value="HTML" name="skills">HTML</input>
+        <input  class="para" type="checkbox" id="CSS" value="CSS" name="skills">CSS</input>
+        <span class="s"></span>
+        </p>
+        <br>
+        <p class="para">
+        <lable  class="l"></lable>
+        
+        <button  class="btn2" id="en1" name="enroll" onClick="validate()">Enroll  
+              <button   class="btn1" id="clr" onClick="clean()">Clear</button> </button>
+        </p>
+     </form>
+        </div>
+        <div class="enrolled-students">
+        <div class="desc" id="es">Enrolled Students</div>
+          <div class="block" id="container">
+              <div class="head" style="display:none" id="head">
+                <span  style="margin-left:3%">Description</span>
+                <span style="margin-left:42%">Image</span>
+              </div>
+          </div>
+        </div>
+    
+     
+       
+        <script>
+            
+            var studentsarray=[];
+      
+    //    localStorage.clickcount = 0; 
+        function validate()
+        {
+            
+           var name=document.getElementById("name").value
+           var email=document.getElementById("email").value
+           var website=document.getElementById("website").value
+           var imglink=document.getElementById("imglink").value
+        //    var avatar= document.getElementById("avatar").value
+           var num = /\d/;  
+           var s=/[A-Z]|[a-z]/;
+           var ereg=/^([A-Za-z0-9]+)@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*(\.[A-Za-z]{2,3})$/
+           var expression = 
+                          /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
+           let c=0;
+        var regex = new RegExp(expression);
+        var m=document.getElementById("Male").value;
+          var f=document.getElementById("Female").value;
+        
+        if(document.getElementById("Male").checked==false && document.getElementById("Female").checked==false)
+        {
+            
+            document.getElementById("gender-sp").innerHTML="choose gender";
+            c=1;
+        }
+        else{
+            document.getElementById("gender-sp").innerHTML="";
+            c=0;
+        }
+        // else{
+        //     document.getElementById("gender").innerHTML="";
+        //     c=0;
+        // }
+           if(name=="")
+           {
+              
+            document.getElementById("name-sp").innerHTML="enter valid name";
+            c=1;
+           
+           }
+           else
+           {
+            document.getElementById("name-sp").innerHTML="";
+            c=0;
+           }
+           if(num.test(name))
+           {
+               if(!s.test(name))
+               {
+                 document.getElementById("name-sp").innerHTML="enter valid name no numbers"
+                 c=1;
+               }
+               else{
+                document.getElementById("name-sp").innerHTML="";
+                c=0;
+               }
+           }
+           if(!ereg.test(email)|| email=="")
+           {
+            document.getElementById("email-sp").innerHTML="enter valid email";
+            c=1;
+           }
+           else
+           {
+            document.getElementById("email-sp").innerHTML="";
+            c=0;
+           }
+           if(!website.match(regex) ||website=="")
+           {
+            document.getElementById("website-sp").innerHTML="enter valid website";
+            c=1;
+           }
+           else
+           {
+            document.getElementById("website-sp").innerHTML="";
+            c=0;
+           }
+         
+           if(imglink=="")
+           {
+            document.getElementById("imglink-sp").innerHTML="enter valid image link";
+            c=1;
+           }
+           
+           else
+           {
+            document.getElementById("imglink-sp").innerHTML="";
+            c=0;
+           }
+           if(c==0)
+           {
+            fill();  
+           }
+           const form = document.querySelector('form')
+           form.addEventListener('submit', event => {
+         
+           event.preventDefault()
+           })
+        }
+        function clean()
+        {
+           
+            document.getElementById("name").value="";
+            document.getElementById("email").value="";
+            document.getElementById("website").value="";
+            document.getElementById("imglink").value="";
+            // document.getElementById("avatar").value="";
+            document.getElementById("Male").checked=false;
+            document.getElementById("Female").checked=false;
+            document.getElementById("Java").checked=false;
+            document.getElementById("HTML").checked=false;
+            document.getElementById("CSS").checked=false;
+        }
+    //    var count = localStorage.getItem('count');
+    //     count=1;
+        function fill()
+        {
+            document.getElementById("head").style.display="block";
+            var name=document.getElementById("name").value
+           var email=document.getElementById("email").value
+           var website=document.getElementById("website").value
+           var imglink=document.getElementById("imglink").value
+        //    var avatar= document.getElementById("avatar").value
+          //  var male= document.getElementById("Male").value
+        var gender=document.querySelector('input[name="gender"]:checked');
+           if(document.getElementById("Java").checked)
+           {
+            var Java="Java"
+           }
+           else{
+            var Java=""
+           }
+           if(document.getElementById("HTML").checked)
+           {
+               var html="html";
+           }
+           else{
+            var html="";
+           }
+           if(document.getElementById("CSS").checked)
+           {
+               var css="css";
+           }
+           else{
+            var css="";
+           }
+       
+           var student={};
+           student.name=name;
+           student.email=email;
+           student.website=website;
+           student.imglink=imglink;
+          
+           student.gender=gender.value;
+           student.Java=Java;
+           student.html=html;
+           student.css=css;
+           studentsarray.push(student);
+           let block=document.getElementById("container");
+           let card=document.createElement("div");
+           card.className="card"
+           block.appendChild(card);
+           card.innerHTML=` <div class="description">
+           <br>
+           ${student.name}
+           <br>
+           ${student.gender}
+           <br>
+           ${student.email}
+           <br>
+           <a href=${student.website} target="_blank" >${student.website}</a>
+           <br>
+           ${student.Java} ${student.html} ${student.css}
+           </div>
+               <div class="img">
+                 <img id="img1" src="${student.imglink}" >
+                 </div>
+                `
+                
+        //   studentsarray[localStorage.clickcount]=student; 
+        //  var studentsarray=[];
+        //   localStorage.setItem(localStorage.clickcount, JSON.stringify(student));
+        //   localStorage.clickcount = Number(localStorage.clickcount)+1;
+          //localstorage.setItem("count", count);
+          
+           //display();
+        }
+        // function display()
+        // {
+           
+        //  //  count=1;
+        //     Element.prototype.appendAfter = function (element) {
+        //         element.parentNode.insertBefore(this, element.nextSibling);
+        //         }, false;
+
+                
+        //         // Object.keys(localStorage).forEach((key) => {
+        //         //     const a=JSON.parse(localStorage.getItem(key));
+        //         //     console.log(a.name);
+        //         //     console.log(a.email);
+        //         // });
+               
+
+        //     //    Object.keys(localStorage).forEach((key) => {
+        //     //         // const a=JSON.parse(localStorage.getItem(key));
+        //     //         localStorage.removeItem("key");
+        //     //     });
+        //     studentsarray.forEach(student=>
+        //     {
+        //         var newdiv=document.createElement("div");
+                
+              
+        //         var newdiv=document.createElement("div");
+        //         newdiv.id='name1';
+        //         var newsp=document.createElement("spam");
+        //         newsp.innerHTML=student.name;
+        //         newsp.id="sp";
+        //         newdiv.appendChild(newsp);
+        //         linebreak=document.createElement("br");
+        //         newdiv.appendChild(linebreak);
+        //         var gender=document.createElement("spam");
+        //         var gen;
+        //         if(student.male!="")
+        //         {
+        //             gen=student.male;
+        //         }
+        //         else
+        //         {
+        //             gen=student.Female;
+        //         }
+        //         gender.innerHTML=gen;
+        //         newdiv.appendChild(gender);
+        //         linebreak=document.createElement("br");
+        //         newdiv.appendChild(linebreak);
+        //         var newsp1=document.createElement("spam");
+        //         newsp1.innerHTML=student.email;
+        //         newsp1.id="sp";
+        //         newdiv.appendChild(newsp1);
+               
+        //        newdiv.appendAfter(document.getElementById('es'));
+
+
+
+
+        //     })
+        // }
+       
+
+
+        </script>
+    </body>
+</html>
